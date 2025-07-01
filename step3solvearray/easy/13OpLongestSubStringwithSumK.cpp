@@ -24,7 +24,7 @@ int LongSub(vector <int> &arr,int k){
 
         //calculate length & Update max len
         if(mp.find(rem) != mp.end() ){
-            
+
             //check length of max length
             int len=i -mp[rem];
             maxlen=max(maxlen,len);
@@ -32,7 +32,8 @@ int LongSub(vector <int> &arr,int k){
         
         //update the map checking the condition
         if (mp.find(sum) == mp.end()){
-            mp[sum] = i;
+            mp[sum] = i; //Every value of i has Sum in map 
+            // To Remove Re-Update
         }
     }
     return maxlen;
@@ -41,7 +42,7 @@ int LongSub(vector <int> &arr,int k){
 int main(){
     vector <int> arr={1,2,3,1,1,1,2,3};
     int k=3;
-    cout<<LongSub(arr,k);
+    cout<<"Longest Sub String with sum "<<k<< " is : " <<LongSub(arr,k);
     return 0;
 
 }
